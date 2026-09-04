@@ -36,21 +36,35 @@ Built entirely in Go, Certmole compiles into a single standalone binary with no 
 
 - **Cross-platform builds** — Supports Linux and Windows on common AMD64 and ARM64 architectures.
 
+## Supported File Types
+
+Certmole currently examines files with the following certificate extensions.
+
+| Extension | Format |
+| :--- | :----: |
+| .crt | PEM-encoded certificate or private key |
+| .pem | DER-encoded certificate |
+| .cer | Certificate |
+| .key | Private Key |
+
+> [!NOTE]
+The parser identifies the actual cryptographic content rather than relying solely on the file extension.
+
 ## Installation
 
-### Quickstart
+### Using Installation Scripts
+
+Choose the installation script for your operating system to install Certmole.
 
 #### Linux
 
-Install Certmole using the installation script:
-
-```shell
+```bash
 curl -fsSL https://raw.githubusercontent.com/xinlonghe2512/certmole/main/install.sh | sh
 ```
 
 #### Windows
 
-```shell
+```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://raw.githubusercontent.com/xinlonghe2512/certmole/main/install.ps1 | iex"
 ```
 
@@ -58,13 +72,12 @@ powershell -ExecutionPolicy ByPass -c "irm https://raw.githubusercontent.com/xin
 
 Alternatively, you can "git clone" this repository to any directory and run install script.
 
-```shell
+```bash
 git clone --depth 1 https://github.com/xinlonghe2512/certmole.git
 
 chmod +x install.sh
 
 ./install.sh
-
 ```
 
 > [!IMPORTANT]
@@ -83,13 +96,13 @@ Certmole requires a target directory to scan.
 
 ### Scan the current directory
 
-```shell
+```bash
 certmole --directory .
 ```
 
 ### Scan a specific target directory
 
-```shell
+```bash
 certmole --directory /etc/nginx/certs
 ```
 
@@ -98,32 +111,18 @@ Ensure that you have the necessary directory permissions to access the target di
 
 ### Scan and export results to CSV file (specifying a filename)
 
-```shell
+```bash
 certmole --directory /etc/nginx/certs -export ./reports/certificates-report.csv
 ```
 
 ### Scan and export results to CSV file (without specifying a filename)
 
-```shell
+```bash
 certmole --directory /etc/nginx/certs --export ./reports/
 ```
 
 > [!NOTE]
 When not specifying a filename, the default filename `certmole-result` will be used. In this example, you can find your result at `./reports/certmole-result.csv` .
-
-## Supported File Types
-
-Certmole currently examines files with the following certificate extensions.
-
-| Extension | Format |
-| :--- | :----: |
-| .crt | PEM-encoded certificate or private key |
-| .pem | DER-encoded certificate |
-| .cer | Certificate |
-| .key | Private Key |
-
-> [!NOTE]
-The parser identifies the actual cryptographic content rather than relying solely on the file extension.
 
 ## Contributing
 
