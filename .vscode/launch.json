@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Certmole",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/cmd/certmole",
+            "console": "integratedTerminal",
+            "args": [
+                "--directory",
+                "."
+            ]
+        },
+        {
+            "name": "Debug Certmole with Export",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/cmd/certmole",
+            "console": "integratedTerminal",
+            "args": [
+                "--directory",
+                ".",
+                "--export",
+                "${workspaceFolder}/dist"
+            ]
+        }
+    ]
+}

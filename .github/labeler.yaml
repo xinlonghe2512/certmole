@@ -1,0 +1,64 @@
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - 'docs/**'
+
+go:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.go' 
+          - 'go.mod' 
+          - 'go.sum'
+
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - Makefile
+          - .goreleaser.yml
+          - 'scripts/**'
+          - '.devcontainer/**'
+
+test:
+  - changed-files:
+      - any-glob-to-any-file:
+          - test/**
+          - src/**/*_test.go
+
+install:
+  - changed-files:
+      - any-glob-to-any-file:
+          - install
+          - install.ps1
+          - uninstall
+
+cli: 
+  - changed-files: 
+      - any-glob-to-any-file: 
+          - 'cmd/**'
+
+crawler: 
+  - changed-files: 
+      - any-glob-to-any-file: 
+          - 'internal/crawler/**'
+
+parser: 
+  - changed-files: 
+      - any-glob-to-any-file: 
+          - 'internal/parser/**'
+
+export: 
+  - changed-files: 
+      - any-glob-to-any-file: 
+          - 'internal/export/**'
+
+filesystem: 
+  - changed-files: 
+      - any-glob-to-any-file: 
+          - 'internal/fs/**'
+

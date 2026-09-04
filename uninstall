@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -e
+
+BINARY_NAME="certmole"
+
+SYSTEM_INSTALL_PATH="/usr/local/bin/${BINARY_NAME}"
+USER_INSTALL_PATH="${HOME}/.local/bin/${BINARY_NAME}"
+
+echo "==> Certmole Uninstaller"
+
+FOUND=false
+
+# Check for a system-wide installation.
+if [ -f "$SYSTEM_INSTALL_PATH" ]; then
+    FOUND=true
+
+    if [ "$EUID" -ne 0 ]; then
+        echo "==> System installation detected at:"
+        echo "    $SYSTEM_INSTALL_PATH"
+        echo
+        echo "==> Administrator privileges are required."
+        echo "    Re-run with:"
+        echo
+        echo "    sudo $0"
+        exit 1
+    fi
+
+    rm -f "$SYSTEM_INSTALL_PATH"
+    echo "==> Removed: $SYSTEM_INSTALL_PATH"
+fi
+
+# Check for a user-local installation.
+if [ -f "$USER_INSTALL_PATH" ]; then
+    FOUND=true
+
+    rm -f "$USER_INSTALL_PATH"
+    echo "==> Removed: $USER_INSTALL_PATH"
+fi
+
+# Nothing was installed.
+if [ "$FOUND" = false ]; then
+    echo "==> Certmole is not installed."
+    exit 0
+fi
+
+# Verify that no installation remains.
+if [ ! -f "$SYSTEM_INSTALL_PATH" ] && [ ! -f "$USER_INSTALL_PATH" ]; then
+    echo "==> Certmole has been successfully uninstalled."
+    exit 0
+fi
+
+echo "==> Failed to completely remove Certmole."
+exit 1

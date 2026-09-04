@@ -1,0 +1,38 @@
+version: 2
+
+project_name: certmole
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: certmole
+    main: ./cmd/certmole
+    binary: certmole
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - windows_amd64
+
+archives:
+  - formats:
+      - binary
+    name_template: >-
+      {{ .ProjectName }}-{{ .Os }}-{{ .Arch }}{{ with .Arm }}v{{ . }}{{ end }}
+      
+checksum:
+  name_template: 'checksums.txt'
+
+release:
+  github:
+    owner: xinlonghe2512
+    name: certmole

@@ -1,0 +1,53 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Local build binary
+/certmole
+
+# Test binaries and artifacts
+*.test
+*.out
+*.prof
+coverage.*
+*.coverprofile
+profile.cov
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Dependency directories
+# vendor/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Release/build output
+/dist/
+
+# Temporary files
+tmp/
+*.tmp
+*.temp
+
+# Editor / IDE files
+.vscode/*.code-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini

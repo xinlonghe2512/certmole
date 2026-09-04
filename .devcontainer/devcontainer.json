@@ -1,0 +1,82 @@
+{
+	"name": "Certmole Development Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		},
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      
+    },
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": false
+		}
+	},
+	"customizations": {
+		"vscode": {
+      "extensions": [
+        "golang.go",
+        "github.vscode-github-actions",
+        "redhat.vscode-yaml",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+
+        "[go]": {
+          "editor.defaultFormatter": "golang.go",
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          }
+        },
+
+        "go.useLanguageServer": true,
+
+        "go.toolsManagement.autoUpdate": false,
+
+        "go.lintTool": "golangci-lint",
+        "go.lintOnSave": "package",
+        "go.testFlags": [
+          "-v"
+        ],
+
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true
+      }
+		}
+	},
+
+  "mounts": [
+    {
+      "type": "volume",
+      "source": "certmole-go-mod",
+      "target": "/go/pkg/mod"
+    },
+    {
+      "type": "volume",
+      "source": "certmole-go-build",
+      "target": "/home/vscode/.cache/go-build"
+    }
+  ],
+
+  "containerEnv": {
+    "CGO_ENABLED": "1"
+  },
+
+  "postCreateCommand": "go mod download && go mod verify",
+
+  "forwardPorts": [],
+
+  "remoteEnv": {
+    "GOTOOLCHAIN": "local"
+  }
+}

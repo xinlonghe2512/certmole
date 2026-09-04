@@ -1,0 +1,12 @@
+# See https://github.com/crate-ci/typos/blob/master/docs/reference.md to configure typos
+[default]
+locale = "en-us"
+
+[default.extend-words]
+certmole = "certmole"
+x509 = "x509"
+
+[files]
+extend-exclude = [
+    "dist/**",
+]
