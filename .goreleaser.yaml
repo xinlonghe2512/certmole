@@ -26,10 +26,13 @@ builds:
       - linux_amd64
       - linux_arm64
       - windows_amd64
-
+    
     ldflags:
       - -s -w
       - -X main.version={{ .Version }}
+
+changelog:
+  disable: true
 
 archives:
   - formats: [tar.gz]
@@ -41,7 +44,7 @@ archives:
         formats: [zip]
       
 checksum:
-  name_template: 'certmole-{{ .Version }}-checksums.txt'
+  name_template: "{{ .ProjectName }}-{{ .Version }}-checksums.txt"
 
 release:
   github:
