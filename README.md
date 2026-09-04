@@ -1,13 +1,18 @@
 <div align="center">
-  <a href="https://github.com/xinlonghe2512/certmole/actions"><img src="https://github.com/xinlonghe2512/certmole/actions/workflows/ci.yaml/badge.svg?branch=main" alt="Build Status"></a>
-  <a href="http://github.com/xinlonghe2512/certmole/releases"><img src="https://img.shields.io/github/v/tag/xinlonghe2512/certmole" alt="Version"></a>
-  <a href="https://github.com/xinlonghe2512/certmole/releases"><img src="https://img.shields.io/github/v/tag/xinlonghe2512/certmole?label=version&color=blue" alt="Version"></a>
-  <a href="https://github.com/xinlonghe2512/certmole/blob/main/LICENSE"><img src="https://img.shields.io/github/license/xinlonghe2512/certmole" alt="License"></a>
-  <a href="https://github.com/xinlonghe2512/certmole/graphs/contributors"><img src="https://img.shields.io/github/contributors/xinlonghe2512/certmole" alt="Contributors"></a>
-  <a href="https://github.com/xinlonghe2512/certmole/stargazers"><img src="https://img.shields.io/github/stars/xinlonghe2512/certmole?style=flat" alt="Stars"></a>
+	
+# Certmole
+	
+A lightweight, zero-dependency CLI scanner for certificates and keys.
+
+[![Build Status](https://github.com/xinlonghe2512/certmole/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/xinlonghe2512/certmole/actions)
+[![Version](https://img.shields.io/github/v/tag/xinlonghe2512/certmole)](https://github.com/xinlonghe2512/certmole/releases)
+[![License](https://img.shields.io/github/license/xinlonghe2512/certmole)](https://github.com/xinlonghe2512/certmole/blob/main/LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/xinlonghe2512/certmole)](https://github.com/xinlonghe2512/certmole/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/xinlonghe2512/certmole?style=flat)](https://github.com/xinlonghe2512/certmole/stargazers)
+	
 </div>
 
-# Certmole
+# About
 
 Certmole is a command-line tool made for System Engineers or DevSecOps personnel for discovering cryptographic assets across filesystems. It recursively scans directories for X.509 certificates and private keys, identifies certificate expiration status, and reports exposed private keys.
 
