@@ -44,7 +44,7 @@ archives:
         formats: [zip]
       
 checksum:
-  name_template: "{{ .ProjectName }}-{{ .Version }}-checksums.txt"
+  name_template: "{{ .ProjectName }}_{{ .Version }}-checksums.txt"
 
 release:
   github:
