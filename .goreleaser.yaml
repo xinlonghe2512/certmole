@@ -10,27 +10,38 @@ builds:
   - id: certmole
     main: ./cmd/certmole
     binary: certmole
+
     env:
       - CGO_ENABLED=0
+
     goos:
       - linux
       - windows
+
     goarch:
       - amd64
       - arm64
+
     targets:
       - linux_amd64
       - linux_arm64
       - windows_amd64
 
+    ldflags:
+      - -s -w
+      - -X main.version={{ .Version }}
+
 archives:
-  - formats:
-      - binary
+  - formats: [tar.gz]
     name_template: >-
-      {{ .ProjectName }}-{{ .Os }}-{{ .Arch }}{{ with .Arm }}v{{ . }}{{ end }}
+      {{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}
+
+    format_overrides:
+      - goos: windows
+        formats: [zip]
       
 checksum:
-  name_template: 'checksums.txt'
+  name_template: 'certmole-{{ .Version }}-checksums.txt'
 
 release:
   github:
