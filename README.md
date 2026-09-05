@@ -12,7 +12,7 @@ A lightweight, zero-dependency CLI scanner for certificates and keys.
  
 </div>
 
-# About
+## About
 
 Certmole is a command-line tool made for System Engineers or DevSecOps personnel for discovering cryptographic assets across filesystems. It recursively scans directories for X.509 certificates and private keys, identifies certificate expiration status, and reports exposed private keys.
 
