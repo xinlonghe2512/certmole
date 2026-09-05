@@ -1,7 +1,7 @@
 <div align="center">
-	
+ 
 # Certmole
-	
+ 
 A lightweight, zero-dependency CLI scanner for certificates and keys.
 
 [![Build Status](https://github.com/xinlonghe2512/certmole/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/xinlonghe2512/certmole/actions)
@@ -9,7 +9,7 @@ A lightweight, zero-dependency CLI scanner for certificates and keys.
 [![License](https://img.shields.io/github/license/xinlonghe2512/certmole)](https://github.com/xinlonghe2512/certmole/blob/main/LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/xinlonghe2512/certmole)](https://github.com/xinlonghe2512/certmole/graphs/contributors)
 [![Stars](https://img.shields.io/github/stars/xinlonghe2512/certmole?style=flat)](https://github.com/xinlonghe2512/certmole/stargazers)
-	
+ 
 </div>
 
 # About

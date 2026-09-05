@@ -7,7 +7,7 @@ If you wish to report a security vulnerability privately, I appreciate your dili
 To report a security vulnerability, please provide the following information:
 
 1. **PROJECT**
-   - https://github.com/xinlonghe2512/certmole
+   - <https://github.com/xinlonghe2512/certmole>
 
 2. **PUBLIC**
    - Indicate whether this vulnerability has already been publicly discussed or disclosed.

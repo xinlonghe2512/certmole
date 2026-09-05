@@ -1,35 +1,35 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "make build",
-            "type": "shell",
-            "command": "make build",
-            "group": "build",
-            "problemMatcher": [
-                "$go"
-            ]
-        },
-        {
-            "label": "make test",
-            "type": "shell",
-            "command": "make test",
-            "group": "test",
-            "problemMatcher": [
-                "$go"
-            ]
-        },
-        {
-            "label": "make check",
-            "type": "shell",
-            "command": "make check",
-            "problemMatcher": []
-        },
-        {
-            "label": "make release",
-            "type": "shell",
-            "command": "make release",
-            "problemMatcher": []
-        }
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "make build",
+			"type": "shell",
+			"command": "make build",
+			"group": "build",
+			"problemMatcher": [
+				"$go"
+			]
+		},
+		{
+			"label": "make test",
+			"type": "shell",
+			"command": "make test",
+			"group": "test",
+			"problemMatcher": [
+					"$go"
+			]
+		},
+		{
+			"label": "make check",
+			"type": "shell",
+			"command": "make check",
+			"problemMatcher": []
+		},
+		{
+			"label": "make release",
+			"type": "shell",
+			"command": "make release",
+			"problemMatcher": []
+		}
+	]
 }

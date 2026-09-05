@@ -8,5 +8,5 @@ x509 = "x509"
 
 [files]
 extend-exclude = [
-    "dist/**",
+  "dist/**",
 ]

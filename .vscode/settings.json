@@ -1,16 +1,16 @@
 {
-    "go.useLanguageServer": true,
-    "gopls": {
-        "formatting.gofumpt": true
-    },
-    "go.formatTool": "gofumpt",
-    "go.lintTool": "golangci-lint",
-    "go.lintOnSave": "package",
-    "go.testFlags": [
-        "-v"
-    ],
-    "files.exclude": {
-        "**/.git": true,
-        "**/dist": false,
-    }
+	"go.useLanguageServer": true,
+	"gopls": {
+		"formatting.gofumpt": true
+	},
+	"go.formatTool": "gofumpt",
+	"go.lintTool": "golangci-lint",
+	"go.lintOnSave": "package",
+	"go.testFlags": [
+		"-v"
+	],
+	"files.exclude": {
+		"**/.git": true,
+		"**/dist": false,
+	}
 }
