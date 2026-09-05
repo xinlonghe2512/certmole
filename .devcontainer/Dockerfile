@@ -9,7 +9,6 @@ RUN apt-get update \
   build-essential \
   ca-certificates \
   curl \
-  git \
   gh \
   jq \
   ripgrep \
